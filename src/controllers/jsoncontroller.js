@@ -38,8 +38,20 @@ function checkPrimeNumbers(req, res) {
     }
 }
 
+function maxNumber(req,res){
+    const {arrays} = req.body; //object with key 'arrays' containing an array
+    let max= arrays[0];//assuming the first position is the largest number
+    for(let i=1;i<arrays.length;i++){
+        if(arrays[i]>max){
+            max=arrays[i];//"Find the maximum number and rearrange it for 'max'
+        }
+    }
+    res.send({ statusbar: max });
+}
+
 module.exports = {
     hello,
     sum,
-    checkPrimeNumbers
+    checkPrimeNumbers,
+    maxNumber
 }

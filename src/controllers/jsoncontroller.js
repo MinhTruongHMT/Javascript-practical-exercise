@@ -48,10 +48,20 @@ function maxNumber(req,res){
     }
     res.send({ statusbar: max });
 }
+function stringReverse(req,res){
+    const {string} = req.params;
+    let text="";//create a new array to hold the reversed string
+    for(let i=string.length-1;i>=0;i--){//retrieve each element of the array in reverse order
+        text =text + string[i];
+    }
+    console.log(text);
+    res.send(text);
+}
 
 module.exports = {
     hello,
     sum,
     checkPrimeNumbers,
-    maxNumber
+    maxNumber,
+    stringReverse
 }
